@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Profile</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>Rate My Aggie</h2>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/professors">Professors</a></li>
+        <li><a href="/student-profile">Student Profile</a></li>
+      </ul>
+    </div>
+
+    <!-- Profile Content -->
+    <div class="main-content">
+      <h1>Welcome to Your Profile, <%= student.name %></h1>
+      <p>Email: <%= student.email %></p>
+      <p>Major: <%= student.major %></p>
+      <p>Bio: <%= student.bio %></p>
+    </div>
+  </div>
+</body>
+</html>
+
+
