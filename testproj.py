@@ -17,7 +17,7 @@ load_dotenv()
 app = Flask(__name__)
 
 # Configure the PostgreSQL database
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URL")
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:password@localhost/school_reviews'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Initialize the database
@@ -40,9 +40,8 @@ class Review(db.Model):
     rating = db.Column(db.Integer, nullable=False)
     comment = db.Column(db.Text, nullable=True)
 
-# Create tables before first request
-@app.before_first_request
-def create_tables():
+# Create tables explicitly in app context (only run once on startup)
+with app.app_context():
     db.create_all()
 
 @app.route('/')
