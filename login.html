@@ -44,23 +44,22 @@
     </style>
 </head>
 <body>
-    <h1>Rate My Aggie</h1>
+     <h1>Rate My Aggie</h1>
     <div class="container">
         <input type="text" id="username" placeholder="Login">
         <input type="password" id="password" placeholder="Password">
-        <button onclick="redirectToHome()">GO</button>
+        <button onclick="login()">GO</button>
     </div>
 
     <script>
-        function redirectToHome() {
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
+        function login() {
+            var user = document.getElementById("username").value;
+            var pass = document.getElementById("password").value;
 
-            // Simple validation check
-            if (username && password) {
-                window.location.href = "home.html"; // Redirect to home page
+            if (user === "username" && pass === "password") {
+                window.location.href = "homepage.html"; // Redirect to homepage
             } else {
-                alert("Please enter your login and password.");
+                alert("Incorrect username or password. Please try again.");
             }
         }
     </script>
