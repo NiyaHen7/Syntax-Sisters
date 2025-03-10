@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rate My Aggie</title>
+    <style>
+        body {
+            background-color: rgb(81, 81, 229);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        input {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            width: 80%;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            background: white;
+            color: blue;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <h1>Rate My Aggie</h1>
+    <div class="container">
+        <input type="text" id="username" placeholder="Login">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="redirectToHome()">GO</button>
+    </div>
+
+    <script>
+        function redirectToHome() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Simple validation check
+            if (username && password) {
+                window.location.href = "home.html"; // Redirect to home page
+            } else {
+                alert("Please enter your login and password.");
+            }
+        }
+    </script>
+</body>
+</html>
