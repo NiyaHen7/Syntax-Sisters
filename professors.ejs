@@ -1,0 +1,39 @@
+<!-- views/professors.ejs -->
+<html>
+<head>
+  <title>Professors - Rate My Aggie</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>  
+
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>Rate My Aggie</h2>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/professors">Professors</a></li>
+        <li><a href="/student-profile"> Student Profile</a></li>
+      </ul>
+    </div>
+  
+    <!-- Main Content -->
+    <div class="main-content">
+      <h1>Professors List</h1>
+      <div class="professors-container">
+        <% professors.forEach(professor => { %>
+          <div class="professor-card">
+            <h2><%= professor.name %></h2>
+            <p><strong>Department:</strong> <%= professor.department %></p>
+            <p><strong>School:</strong> <%= professor.school %></p>
+            <p><strong>Rating:</strong> ⭐ <%= professor.rating %> / 5</p>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+  </div>
+  
+  
+
+</body>
+</html>
